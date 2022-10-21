@@ -1,0 +1,19 @@
+service: bad-bunny-tickets
+
+provider:
+  name: aws
+  stage: ${opt:stage, 'prod'}
+  region: ${env:AWS_REGION, 'us-east-1'}
+  ecr:
+    images:
+      img:
+        path: ./
+        platform: linux/amd64
+
+functions:
+  check_tickets:
+    timeout: 60
+    events:
+      - schedule: rate(6 hours)
+    image:
+      name: img
