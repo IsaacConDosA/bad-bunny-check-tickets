@@ -55,7 +55,7 @@ def check_tickets(event=None, context=None):
     if hay:
         message = "Se han encontrado entradas disponibles. Apúrate! https://www.puntoticket.com/bad-bunny"
     else:
-        message = "No hay entradas disponibles. Avisaré en 6 horas más."
+        message = "No hay entradas disponibles. Avisaré en 5 horas más."
     send_update_to_telegram(message)
 
 if __name__ == "__main__":
